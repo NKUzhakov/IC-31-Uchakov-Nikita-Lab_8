@@ -1,3 +1,5 @@
+import * as basicLightbox from "../node_modules/basiclightbox/dist/basicLightbox.min.js";
+
 const images = [
     {
       preview: "https://pohcdn.com/guide/sites/default/files/styles/big_gallery_image/public/text_gallery/Tokyo-3.jpg",
@@ -63,3 +65,13 @@ gallery.addEventListener("click",(event)=>{
     let imageObject = images.find((image)=>image.preview==previewLink);
     console.log(imageObject.original);
 })
+//===============================
+
+const instance = basicLightbox.create(`
+    <div class="modal">
+        <p>
+            Your first lightbox with just a few lines of code.
+            Yes, it's really that simple.
+        </p>
+    </div>`);
+instance.show(()=>{console.log("Hello");});
