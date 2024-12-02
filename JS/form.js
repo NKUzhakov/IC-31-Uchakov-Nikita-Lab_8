@@ -11,7 +11,7 @@ function inputUpdater(event){
         formData.message = messageInput.value;
     }
     localStorage.setItem("feedback-form-state",JSON.stringify(formData));
-    //console.log(localStorage.getItem("feedback-form-state"));
+    console.log(localStorage.getItem("feedback-form-state"));
 }
 
 userForm.addEventListener("submit", formValidator);
