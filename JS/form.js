@@ -7,11 +7,11 @@ function inputUpdater(event){
     let emailInput =  document.querySelector(".feedback-form input[type = 'email']");
     let messageInput = document.querySelector(".feedback-form textarea[name = 'message']")
     if(targetElement == emailInput || targetElement == messageInput){
-        formData.email = emailInput.value;
-        formData.message = messageInput.value;
+        formData.email = (emailInput.value).trim();
+        formData.message = (messageInput.value).trim();
     }
     localStorage.setItem("feedback-form-state",JSON.stringify(formData));
-    console.log(localStorage.getItem("feedback-form-state"));
+    //console.log(localStorage.getItem("feedback-form-state"));
 }
 
 userForm.addEventListener("submit", formValidator);
