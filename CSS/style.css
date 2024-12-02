@@ -3,18 +3,26 @@ ul.gallery{
     margin: 0px;
     padding: 0px;
 
-    height: 700px;
-    max-width: 1080px;    
+    /* max-width: 1080px;     */
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 ul.gallery li{
-    border: 2px solid red;
     width: 330px;
     height: 200px; 
-    margin: 8px, 10px;   
+    margin: 8px 10px; 
+     
 }
+
 ul.gallery li img{
+    position: relative;
     width: 100%;
     height: 100%;
+    transition: all 0.5s; 
+}
+ul.gallery li img:hover{
+    width: 105%;
+    height: 105%; 
+    translate: -2.5% -2.5%;
 }

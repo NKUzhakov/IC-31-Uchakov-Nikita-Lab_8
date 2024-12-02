@@ -46,7 +46,7 @@ const images = [
     }
 ];
 
-let gallery = document.querySelector(".gallery");
+let gallery = document.querySelector("ul.gallery");
 images.forEach((image) => {addImage(image)});
 
 function addImage(imageObject){
@@ -58,3 +58,8 @@ function addImage(imageObject){
     imageLi.append(imageElement);
     gallery.append(imageLi);
 }
+gallery.addEventListener("click",(event)=>{
+    let previewLink = event.target.src;
+    let imageObject = images.find((image)=>image.preview==previewLink);
+    console.log(imageObject.original);
+})
