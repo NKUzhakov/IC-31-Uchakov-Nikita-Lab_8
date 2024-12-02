@@ -26,3 +26,21 @@ ul.gallery li img:hover{
     height: 105%; 
     translate: -2.5% -2.5%;
 }
+
+
+div.modal{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    /* width: 100%; */
+    height: 800px    
+}
+div.modal img{
+    width: auto;
+    height: 90%;    
+}
+div.modal p{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}

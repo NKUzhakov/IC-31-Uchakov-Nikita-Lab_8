@@ -1,4 +1,4 @@
-import * as basicLightbox from "../node_modules/basiclightbox/dist/basicLightbox.min.js";
+import * as basicLightbox from "../node_modules/basiclightbox/src/scripts/main.js";
 
 const images = [
     {
@@ -22,8 +22,8 @@ const images = [
         description: "Місто Венеція",
     },
     {
-        preview:"https://pohcdn.com/guide/sites/default/files/styles/paragraph__text_with_image___twi_image/public/2021-02/Singapore.jpg",
-        original:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTglcNFEoOYRsinMp8wezEFtGrN_S7pD6sS2Q&s",
+        preview:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTglcNFEoOYRsinMp8wezEFtGrN_S7pD6sS2Q&s",
+        original:"https://pohcdn.com/guide/sites/default/files/styles/paragraph__text_with_image___twi_image/public/2021-02/Singapore.jpg",
         description: "Місто Гонконг",
     },
     {
@@ -63,15 +63,25 @@ function addImage(imageObject){
 gallery.addEventListener("click",(event)=>{
     let previewLink = event.target.src;
     let imageObject = images.find((image)=>image.preview==previewLink);
-    console.log(imageObject.original);
+
+    const instance = basicLightbox.create(`
+        <div class="modal">
+            
+                <img src="${imageObject.original}" alt="${imageObject.description}">
+                <p>${imageObject.description}</p>
+            
+        </div>        
+    `, {closable: true});
+    instance.show();
+    console.log();
 })
 //===============================
 
-const instance = basicLightbox.create(`
-    <div class="modal">
-        <p>
-            Your first lightbox with just a few lines of code.
-            Yes, it's really that simple.
-        </p>
-    </div>`);
-instance.show(()=>{console.log("Hello");});
+// const instance = basicLightbox.create(`
+//     <div class="modal">
+//         <p>
+//             Your first lightbox with just a few lines of code.
+//             Yes, it's really that simple.
+//         </p>
+//     </div>`);
+// instance.show();
