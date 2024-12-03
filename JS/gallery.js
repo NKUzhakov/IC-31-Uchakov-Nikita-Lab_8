@@ -1,4 +1,4 @@
-import * as basicLightbox from "../node_modules/basiclightbox/src/scripts/main.js";
+//import * as basicLightbox from "../node_modules/basiclightbox/src/scripts/main.js";
 
 const images = [
     {
@@ -64,6 +64,7 @@ gallery.addEventListener("click",(event)=>{
     let previewLink = event.target.src;
     let imageObject = images.find((image)=>image.preview==previewLink);
 
+    
     const instance = basicLightbox.create(`
         <div class="modal">
             
@@ -75,13 +76,3 @@ gallery.addEventListener("click",(event)=>{
     instance.show();
     console.log();
 })
-//===============================
-
-// const instance = basicLightbox.create(`
-//     <div class="modal">
-//         <p>
-//             Your first lightbox with just a few lines of code.
-//             Yes, it's really that simple.
-//         </p>
-//     </div>`);
-// instance.show();
